@@ -7,7 +7,8 @@ interface ParticlesProps {
     className?: string;
     quantity?: number;
     staticity?: number;
-    ease?: number;
+    alignment?: number;
+    cohesion?: number;
     refresh?: boolean;
 }
 
@@ -15,7 +16,8 @@ export default function Particles({
     className = "",
     quantity = 30,
     staticity = 50,
-    ease = 50,
+    alignment = .01,
+    cohesion = .12,
     refresh = false,
 }: ParticlesProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -154,65 +156,74 @@ export default function Particles({
         }
     };
 
+    class Vector {
+        x: number;
+        y: number;
+
+        constructor(x: number, y: number) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
     const animate = () => {
         clearContext();
+
+        var v1: Vector, v2: Vector, v3: Vector;
         circles.current.forEach((circle: Circle, i: number) => {
-            // Create list of nearby circles
-            const nearbyCircles = circles.current.filter((c: Circle) => {
-                const distance = Math.hypot(c.x - circle.x, c.y - circle.y);
-                return distance < staticity;
+            // Rule 1: Boids try to fly towards the center of mass of neighbouring boids.
+            const neighbourhoodSize = 100;
+            v1 = new Vector(0, 0);
+            circles.current.forEach((otherCircle: Circle, j: number) => {
+                if (i !== j && Math.abs(circle.x - otherCircle.x) < neighbourhoodSize) {
+                    v1.x += otherCircle.x;
+                    v1.y += otherCircle.y;
+                }
             });
-            
-            // Find average position of nearby circles
-            const averagePosition = nearbyCircles.reduce(
-                (acc: { x: number; y: number }, c: Circle) => {
-                    acc.x += c.x;
-                    acc.y += c.y;
-                    return acc;
-                },
-                { x: 0, y: 0 },
-            );
+            v1.x /= circles.current.length - 1;
+            v1.y /= circles.current.length - 1;
+            v1.x -= circle.x;
+            v1.y -= circle.y;
 
-            // Find average direction of nearby circles
-            const averageDirection = nearbyCircles.reduce(
-                (acc: { x: number; y: number }, c: Circle) => {
-                    acc.x += c.dx;
-                    acc.y += c.dy;
-                    return acc;
-                },
-                { x: 0, y: 0 },
-            );
+            // Rule 2: Boids try to keep a small distance away from other objects (including other boids).
+            const tooClose = 20;
+            v2 = new Vector(0, 0);
+            circles.current.forEach((otherCircle: Circle, j: number) => {
+                if (i !== j && Math.abs(circle.x - otherCircle.x) < tooClose) {
+                    v2.x -= otherCircle.x - circle.x;
+                    v2.y -= otherCircle.y - circle.y;
+                }
+            });
 
-            // Find distance and angle between the two circles
-            const distance = Math.hypot(
-                circle.x - averagePosition.x,
-                circle.y - averagePosition.y,
-            );
-            const angle = Math.atan2(
-                averageDirection.y,
-                averageDirection.x,
-            );
+            // Rule 3: Boids try to match velocity with near boids.
+            const matchingVelocity = 20;
+            v3 = new Vector(0, 0);
+            circles.current.forEach((otherCircle: Circle, j: number) => {
+                if (i !== j && Math.abs(circle.x - otherCircle.x) < matchingVelocity) {
+                    v3.x += otherCircle.dx;
+                    v3.y += otherCircle.dy;
+                }
+            });
+            v3.x /= circles.current.length - 1;
+            v3.y /= circles.current.length - 1;
+            v3.x -= circle.dx;
+            v3.y -= circle.dy;
 
-            // Find velocity
-            var velocity;
-            
-            if (distance > 0.5) velocity = 1;
-            else velocity = -1;
+            // Update the circle's velocity
+            circle.dx += v1.x * alignment + v3.x * cohesion;
+            circle.dy += v1.y * alignment + v3.y * cohesion;
 
-            const dx = velocity * Math.cos(angle);
-            const dy = velocity * Math.sin(angle);
-            circle.dx = dx;
-            circle.dy = dy;
-            
+            // Update the circle's position
             circle.x += circle.dx;
             circle.y += circle.dy;
 
-            circle.translateX +=
-                (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
-                ease;
-            circle.translateY +=
-                (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
-                ease;
+
+            // circle.translateX +=
+            //     (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
+            //     ease;
+            // circle.translateY +=
+            //     (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
+            //     ease;
                 
             // Loop the circle around the canvas
             if (circle.x < 0) circle.x = canvasSize.current.w;
