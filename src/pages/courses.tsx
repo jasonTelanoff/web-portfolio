@@ -2,6 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
 
+interface Course {
+    title: string;
+    description: string;
+    detailsLink?: string;
+    catalogLink?: string;
+    courseLink?: string;
+}
+
 const Coursework = () => {
     // Sample course data
     const semesters = [
@@ -152,7 +160,7 @@ const Coursework = () => {
 
                     <div className="w-px bg-gray-300 mx-4" />
                     <div className="flex flex-col w-1/2">
-                        {semester.courses.map((course, courseIndex) => (
+                        {semester.courses.map((course: Course, courseIndex) => (
                             <div key={courseIndex} className="mb-4">
                                 <p className="text-lg font-bold">{course.title}</p>
                                 <p className="text-gray-600 mb-2">{course.description}</p>
