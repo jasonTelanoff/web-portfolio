@@ -82,10 +82,7 @@ export default function Particles({
     type Circle = {
         x: number;
         y: number;
-        translateX: number;
-        translateY: number;
         size: number;
-        alpha: number;
         dx: number;
         dy: number;
     };
@@ -115,10 +112,7 @@ export default function Particles({
         return {
             x,
             y,
-            translateX,
-            translateY,
             size,
-            alpha,
             dx,
             dy,
         };
@@ -126,11 +120,18 @@ export default function Particles({
 
     const drawCircle = (circle: Circle, update = false) => {
         if (context.current) {
-            const { x, y, translateX, translateY, size, alpha } = circle;
-            context.current.translate(translateX, translateY);
+            const { x, y, size } = circle;
             context.current.beginPath();
             context.current.arc(x, y, size, 0, 2 * Math.PI);
-            context.current.fillStyle = `rgba(255, 255, 255, 255)`;
+
+            const x1 = x / canvasSize.current.w;
+            const y1 = y / canvasSize.current.h;
+
+            const r = x1 * 255;
+            const g = ((1 - x1) * y1) * 255;
+            const b = (1 - y1) * 255;
+            context.current.fillStyle = `rgb(${r}, ${g}, ${b})`;
+
             context.current.fill();
             context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -179,7 +180,7 @@ export default function Particles({
             const circleYBefore = circle.y;
 
             // Create a list of the circles within the neighbourhood
-            const neighbourhoodSize = 100;
+            const neighbourhoodSize = 50;
             let neighbouringBoids: any[] = [];
             circles.current.forEach((otherCircle: Circle, j: number) => {
                 if (i !== j && Math.abs(circle.x - otherCircle.x) < neighbourhoodSize) {
@@ -197,8 +198,8 @@ export default function Particles({
                 v3 = rule3(circle, neighbouringBoids);
 
                 // Update the circle's velocity
-                circle.dx += (v1.x + 5*v2.x + v3.x) / 200;
-                circle.dy += (v1.y + 5*v2.y + v3.y) / 200;
+                circle.dx += (v1.x + v2.x + 0.5 * v3.x) / 200;
+                circle.dy += (v1.y + v2.y + 0.5 * v3.y) / 200;
 
                 // Limit the circle's velocity
                 const currentSpeed = Math.hypot(circle.dx, circle.dy);
@@ -223,9 +224,6 @@ export default function Particles({
                     ...circle,
                     x: circle.x,
                     y: circle.y,
-                    translateX: circle.translateX,
-                    translateY: circle.translateY,
-                    alpha: 255,
                 },
                 true,
             );
@@ -258,7 +256,7 @@ export default function Particles({
 
     function rule2(circle: Circle, neighbouringCircles: Circle[]) {
         // Rule 2: Boids try to keep a small distance away from other objects (including other boids).
-        const tooClose = 5;
+        const tooClose = 30;
         var v2: Vector = new Vector(0, 0);
         neighbouringCircles.forEach((otherCircle: Circle, j: number) => {
             if (Math.hypot(otherCircle.x - circle.x, otherCircle.y - circle.y) < tooClose) {
