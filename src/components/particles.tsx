@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { useMousePosition } from "../../util/mouse";
+import React, { useRef, useEffect } from "react";
+import { useMousePosition } from "../util/mouse";
 
 interface ParticlesProps {
     className?: string;
@@ -10,6 +10,8 @@ interface ParticlesProps {
     maxSpeed?: number;
     maxSize?: number;
     minSize?: number;
+    neighbourhoodSize? : number;
+    tooClose?: number;
     mouseInfluence?: number;
     refresh?: boolean;
 }
@@ -17,10 +19,11 @@ interface ParticlesProps {
 export default function Particles({
     className = "",
     quantity = 30,
-    staticity = 50,
     maxSpeed = 5,
     maxSize = 10,
     minSize = 5,
+    neighbourhoodSize = 100,
+    tooClose = 20,
     mouseInfluence = 20,
     refresh = false,
 }: ParticlesProps) {
@@ -103,10 +106,7 @@ export default function Particles({
     const circleParams = (): Circle => {
         const x = Math.floor(Math.random() * canvasSize.current.w);
         const y = Math.floor(Math.random() * canvasSize.current.h);
-        const translateX = 0;
-        const translateY = 0;
         const size = Math.floor(Math.random() * (maxSize - minSize)) + minSize;
-        const alpha = 0;
         const dx = (Math.random() - 0.5) * 0;
         const dy = (Math.random() - 0.5) * 0;
         return {
@@ -180,7 +180,6 @@ export default function Particles({
             const circleYBefore = circle.y;
 
             // Create a list of the circles within the neighbourhood
-            const neighbourhoodSize = 50;
             let neighbouringBoids: any[] = [];
             circles.current.forEach((otherCircle: Circle, j: number) => {
                 if (i !== j && Math.abs(circle.x - otherCircle.x) < neighbourhoodSize) {
@@ -198,8 +197,8 @@ export default function Particles({
                 v3 = rule3(circle, neighbouringBoids);
 
                 // Update the circle's velocity
-                circle.dx += (v1.x + v2.x + 0.5 * v3.x) / 200;
-                circle.dy += (v1.y + v2.y + 0.5 * v3.y) / 200;
+                circle.dx += (v1.x + v2.x + v3.x) / 200;
+                circle.dy += (v1.y + v2.y + v3.y) / 200;
 
                 // Limit the circle's velocity
                 const currentSpeed = Math.hypot(circle.dx, circle.dy);
@@ -239,24 +238,23 @@ export default function Particles({
             v1.y += otherCircle.y;
         });
 
-        v1.x += mouse.current.x * mouseInfluence;
-        v1.y += mouse.current.y * mouseInfluence;
+        // v1.x += mouse.current.x * mouseInfluence;
+        // v1.y += mouse.current.y * mouseInfluence;
 
-        v1.x /= (neighbouringCircles.length + mouseInfluence);
-        v1.y /= (neighbouringCircles.length + mouseInfluence);
+        v1.x /= (neighbouringCircles.length);
+        v1.y /= (neighbouringCircles.length);
 
         v1.x -= circle.x;
         v1.y -= circle.y;
 
-        v1.x /= 100;
-        v1.y /= 100;
+        v1.x /= 50;
+        v1.y /= 50;
 
         return v1;
     }
 
     function rule2(circle: Circle, neighbouringCircles: Circle[]) {
         // Rule 2: Boids try to keep a small distance away from other objects (including other boids).
-        const tooClose = 30;
         var v2: Vector = new Vector(0, 0);
         neighbouringCircles.forEach((otherCircle: Circle, j: number) => {
             if (Math.hypot(otherCircle.x - circle.x, otherCircle.y - circle.y) < tooClose) {
