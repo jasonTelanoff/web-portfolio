@@ -28,6 +28,9 @@ export default function Home() {
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={200}
+        maxSize={5}
+        minSize={2}
+        mouseInfluence={20}
       />
       <h1 className="z-10 text4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-3xl md:text-7xl whitespace-nowrap bg-clip-text ">
         Jason Telanoff
