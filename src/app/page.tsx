@@ -16,7 +16,7 @@ export default function Home() {
           maxSpeed={2}
           maxSize={5}
           minSize={2}
-          mouseInfluence={0}
+          mouseInfluence={50}
           neighbourhoodSize={100}
           tooClose={10}
         />

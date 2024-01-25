@@ -120,16 +120,28 @@ export default function Particles({
 
     const drawCircle = (circle: Circle, update = false) => {
         if (context.current) {
-            const { x, y, size } = circle;
+            const { x, y, size, dx, dy } = circle;
             context.current.beginPath();
             context.current.arc(x, y, size, 0, 2 * Math.PI);
 
-            const x1 = x / canvasSize.current.w;
-            const y1 = y / canvasSize.current.h;
+            // const x1 = x / canvasSize.current.w;
+            // const y1 = y / canvasSize.current.h;
 
-            const r = x1 * 255;
-            const g = ((1 - x1) * y1) * 255;
-            const b = (1 - y1) * 255;
+            // const x1 = dx / (maxSpeed + maxSpeed) + 0.5;
+            // const y1 = dy / (maxSpeed + maxSpeed) + 0.5;
+
+            // const r = x1 * 255;
+            // const g = ((1 - x1) * y1) * 255;
+            // const b = (1 - y1) * 255;
+            // context.current.fillStyle = `rgb(${r}, ${g}, ${b})`;
+
+            const athird = 2 * Math.PI / 3;
+
+            const angle = Math.atan2(dy, dx);
+            const r = 255 * Math.cos(angle);
+            const g = 255 * Math.cos(angle + athird);
+            const b = 255 * Math.cos(angle - athird);
+
             context.current.fillStyle = `rgb(${r}, ${g}, ${b})`;
 
             context.current.fill();
@@ -192,18 +204,19 @@ export default function Particles({
                 }
             });
 
-            if ((Number.isNaN(circle.x) || Number.isNaN(circle.y)) && (!Number.isNaN(circleXBefore) || !Number.isNaN(circleYBefore))) {
-                console.log("0:", circleXBefore, circleYBefore, circle.x, circle.y);
-            }
-
             if (neighbouringBoids.length != 0) {
-                v1 = rule1(circle, neighbouringBoids);
-                v2 = rule2(circle, neighbouringBoids);
-                v3 = rule3(circle, neighbouringBoids);
+                if (Math.hypot(circle.x - mouse.current.x, circle.y - mouse.current.y) < mouseInfluence) {
+                    circle.dx += (circle.x - mouse.current.x) / 300;
+                    circle.dy += (circle.y - mouse.current.y) / 300;
+                } else {
+                    v1 = rule1(circle, neighbouringBoids);
+                    v2 = rule2(circle, neighbouringBoids);
+                    v3 = rule3(circle, neighbouringBoids);
 
-                // Update the circle's velocity
-                circle.dx += (v1.x + v2.x + v3.x) / 200;
-                circle.dy += (v1.y + v2.y + v3.y) / 200;
+                    // Update the circle's velocity
+                    circle.dx += (v1.x + v2.x + v3.x) / 200;
+                    circle.dy += (v1.y + v2.y + v3.y) / 200;
+                }
 
                 // Limit the circle's velocity
                 const currentSpeed = Math.hypot(circle.dx, circle.dy);
