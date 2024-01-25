@@ -10,7 +10,7 @@ interface ParticlesProps {
     maxSpeed?: number;
     maxSize?: number;
     minSize?: number;
-    neighbourhoodSize? : number;
+    neighbourhoodSize?: number;
     tooClose?: number;
     mouseInfluence?: number;
     refresh?: boolean;
@@ -42,7 +42,7 @@ export default function Particles({
             context.current = canvasRef.current.getContext("2d");
         }
         initCanvas();
-        animate();
+        firstAnimate();
         window.addEventListener("resize", initCanvas);
 
         return () => {
@@ -171,6 +171,11 @@ export default function Particles({
         }
     }
 
+    const firstAnimate = async () => {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        animate();
+    }
+
     const animate = () => {
         clearContext();
 
@@ -247,8 +252,8 @@ export default function Particles({
         v1.x -= circle.x;
         v1.y -= circle.y;
 
-        v1.x /= 50;
-        v1.y /= 50;
+        v1.x /= 100;
+        v1.y /= 100;
 
         return v1;
     }
@@ -277,8 +282,8 @@ export default function Particles({
         v3.y /= neighbouringCircles.length;
         v3.x -= circle.dx;
         v3.y -= circle.dy;
-        v3.x /= 8;
-        v3.y /= 8;
+        v3.x /= 2;
+        v3.y /= 2;
 
         return v3;
     }

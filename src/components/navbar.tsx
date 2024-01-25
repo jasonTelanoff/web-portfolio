@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 const navigation = [
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/" },
     { name: "About Me", href: "/about_me" },
+    { name: "Projects", href: "/projects" },
+    { name: "Course Work", href: "/courses" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
