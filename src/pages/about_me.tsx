@@ -15,7 +15,7 @@ export default function AboutMe() {
                     />
                     <div>
                         <p className="text-lg mb-6">
-                            Hello! I'm Jason Telanoff, a passionate software engineer and a student at UC Berkeley expected to graduate in Spring 2025. I have a strong background in mobile development and efficient algorithms, but enjoy working on a variety of projects.
+                            Hello! I'm Jason Telanoff, a passionate software engineer and a Computer Science and Applied Math double major at UC Berkeley expected to graduate in Spring 2025. I have a strong background in mobile development and efficient algorithms, but enjoy working on a variety of projects.
                         </p>
                         <p className="text-lg mb-6">
                             My journey in software development started in elementary school, when my father showed me a basic Scratch game. Since then, I've been eager to learn new technologies and explore innovative solutions to challenging problems.
@@ -26,7 +26,6 @@ export default function AboutMe() {
                         <p className="text-lg mb-6">
                             Feel free to explore my projects to get a glimpse of my work. If you have any questions or would like to collaborate, don't hesitate to reach out through the contact page!
                         </p>
-                        {/* Add more sections as needed */}
                     </div>
                 </div>
             </div>
