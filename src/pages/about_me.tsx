@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/navbar';
+import Image from 'next/image'
 
 export default function AboutMe() {
     return (
@@ -8,7 +9,7 @@ export default function AboutMe() {
             <div className="w-full md:w-3/4 lg:w-3/5 mx-auto mt-8">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
                 <div className="flex items-center mb-8">
-                    <img
+                    <Image
                         src="me.png"  // Add a placeholder image URL
                         alt="Profile"
                         className="rounded w-32 h-32 md:w-32 md:h-32 lg:w-64 lg:h-64 mr-8"
