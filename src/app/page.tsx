@@ -28,6 +28,7 @@ export default function Home() {
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={200}
+        maxSpeed={1.5}
         maxSize={5}
         minSize={2}
         mouseInfluence={20}
