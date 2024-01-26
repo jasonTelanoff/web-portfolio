@@ -10,9 +10,11 @@ export default function AboutMe() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
                 <div className="flex items-center mb-8">
                     <Image
-                        src="me.png"  // Add a placeholder image URL
-                        alt="Profile"
-                        className="rounded w-32 h-32 md:w-32 md:h-32 lg:w-64 lg:h-64 mr-8"
+                        src="me.png"
+                        width={300}
+                        height={200}
+                        alt="Me with an 8 pack (of Pepsi)"
+                        className="rounded mr-8"
                     />
                     <div>
                         <p className="text-lg mb-6">
@@ -24,11 +26,12 @@ export default function AboutMe() {
                         <p className="text-lg mb-6">
                             In addition to coding, I have a keen interest in cooking, Minecraft, and hiking. I believe in continuous learning and strive to improve my skills every day.
                         </p>
-                        <p className="text-lg mb-6">
+                        <p className="text-lg">
                             Feel free to explore my projects to get a glimpse of my work. If you have any questions or would like to collaborate, don&apos;t hesitate to reach out through the contact page!
                         </p>
                     </div>
                 </div>
+                *Note: This website is still under construction and the image WILL be replaced with a better one soon!
             </div>
         </main>
     );

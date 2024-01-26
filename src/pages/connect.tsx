@@ -7,18 +7,19 @@ export default function Connect() {
             <Navbar />
             <div className="container mx-auto my-8 p-8 max-w-md shadow-md rounded-md">
                 <h1 className="text-4xl font-bold mb-6">Connect with Me</h1>
+                <p>*Note: I don&apos;t like this page&apos;s UI as much as you.</p>
 
                 <div className="mb-8">
                     <h2 className="text-2xl font-semibold mb-4">Emails:</h2>
                     <ul className="list-disc pl-6">
                         <li className="mb-2">
-                            <a href="mailto:your.email@example.com" className="text-blue-500 hover:underline">
-                                your.email@example.com
+                            <a href="mailto:jason.telanoff@gmail.com" className="text-blue-500 hover:underline">
+                                jason.telanoff@gmail.com
                             </a>
                         </li>
                         <li className="mb-2">
-                            <a href="mailto:another.email@example.com" className="text-blue-500 hover:underline">
-                                another.email@example.com
+                            <a href="mailto:json22@berkeley.edu" className="text-blue-500 hover:underline">
+                                json22@berkeley.edu
                             </a>
                         </li>
                     </ul>
@@ -28,17 +29,17 @@ export default function Connect() {
                     <h2 className="text-2xl font-semibold mb-4">Social Links:</h2>
                     <ul className="list-disc pl-6">
                         <li className="mb-2">
-                            <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                                Discord
+                            <a href="https://github.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                GitHub
                             </a>
                         </li>
                         <li className="mb-2">
-                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <a href="https://www.linkedin.com/in/jason-telanoff/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 LinkedIn
                             </a>
                         </li>
                         <li className="mb-2">
-                            <a href="https://devpost.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <a href="devpost.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 Devpost
                             </a>
                         </li>
