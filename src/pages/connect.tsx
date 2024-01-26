@@ -1,10 +1,11 @@
+import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import Link from 'next/link';
 import React from 'react';
 
 export default function Connect() {
     return (
-        <div className="h-screen m-16">
+        <div className="mx-16 pt-16 h-screen flex flex-col justify-between">
             <Navbar />
             <div className="container mx-auto my-8 p-8 max-w-md shadow-md rounded-md font-informal">
                 <h1 className="text-4xl font-bold mb-6">Connect with Me</h1>
@@ -59,6 +60,9 @@ export default function Connect() {
                     </a>
                 </div>
             </div>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 };

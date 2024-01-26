@@ -34,8 +34,8 @@ const MastermindGame: React.FC<ComponentProps> = (props: ComponentProps) => {
         cnv.mousePressed((event) => {
             console.log(event);
 
-            const mouseX = event.clientX;
-            const mouseY = event.screenY;
+            const mouseX = event.offsetX;
+            const mouseY = event.offsetY;
 
             if (winToggle) {
                 if (

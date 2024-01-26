@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 const skills = [
     {
@@ -60,7 +61,7 @@ const skills = [
 
 export default function AboutMe() {
     return (
-        <div className="mx-auto py-16">
+        <div className="pt-16">
             <Navbar />
             <div className="w-full md:w-3/4 lg:w-3/5 mx-auto mt-8">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
@@ -128,6 +129,7 @@ export default function AboutMe() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }
