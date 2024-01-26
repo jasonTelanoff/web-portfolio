@@ -28,6 +28,7 @@ const Coursework = () => {
                     description: 'Introduction to the fundamental concepts of computer graphics. Topics include graphics pipeline, 2D and 3D transformations, viewing, projections, rendering, texture mapping, ray tracing, graphics hardware, and animation.',
                     detailsLink: '/course/computer-graphics',
                     catalogLink: 'https://classes.berkeley.edu/content/2024-spring-compsci-184-001-lec-001',
+                    courseLink: 'https://cs184.eecs.berkeley.edu/',
                 },
                 {
                     title: 'Introduction to Abstract Algebra',
@@ -52,12 +53,14 @@ const Coursework = () => {
                     description: 'Introduction to computer security. Cryptography, authentication, access control, program security, malicious code, operating systems and network security, web security, privacy, and legal and ethical issues.',
                     detailsLink: '/course/computer-security',
                     catalogLink: 'https://classes.berkeley.edu/content/2023-fall-compsci-161-001-lec-001',
+                    courseLink: 'https://cs161.org/',
                 },
                 {
                     title: 'Introduction to Artificial Intelligence',
                     description: 'Introduction to the ideas and techniques underlying the design of intelligent computer systems. Topics include search, game playing, knowledge representation, inference, planning, reasoning under uncertainty, machine learning, robotics, perception, and language understanding.',
                     detailsLink: '/course/intro-to-ai',
                     catalogLink: 'https://classes.berkeley.edu/content/2023-fall-compsci-188-001-lec-001',
+                    courseLink: 'https://inst.eecs.berkeley.edu/~cs188/',
                 },
                 {
                     title: 'Introduction to Analysis',
