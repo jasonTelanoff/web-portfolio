@@ -155,7 +155,7 @@ const Coursework = () => {
                                 <div className='flex flex-row mb-2'>
                                     {course.courseLink && (
                                         <div className='flex flex-row'>
-                                            <Link href={course.courseLink}>
+                                            <Link target="_blank" href={course.courseLink}>
                                                 <p className="text-blue-500 hover:underline">Course Link</p>
                                             </Link>
                                             {(course.courseLink || course.detailsLink) && (
@@ -165,7 +165,7 @@ const Coursework = () => {
                                     )}
                                     {course.catalogLink && (
                                         <div className='flex flex-row'>
-                                            <Link href={course.catalogLink}>
+                                            <Link target="_blank" href={course.catalogLink}>
                                                 <p className="text-blue-500 hover:underline">Course Description</p>
                                             </Link>
                                             {course.detailsLink && (
@@ -174,7 +174,7 @@ const Coursework = () => {
                                         </div>
                                     )}
                                     {course.detailsLink && (
-                                        <Link href={course.detailsLink}>
+                                        <Link target="_blank" href={course.detailsLink}>
                                             <p className="text-blue-500 hover:underline">More Details</p>
                                         </Link>
                                     )}

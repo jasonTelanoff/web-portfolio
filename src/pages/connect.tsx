@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar';
+import Link from 'next/link';
 import React from 'react';
 
 export default function Connect() {
@@ -13,14 +14,14 @@ export default function Connect() {
                     <h2 className="text-2xl font-semibold mb-4">Emails:</h2>
                     <ul className="list-disc pl-6">
                         <li className="mb-2">
-                            <a href="mailto:jason.telanoff@gmail.com" className="text-blue-500 hover:underline">
+                            <Link href="mailto:jason.telanoff@gmail.com" target="_blank" className="text-blue-500 hover:underline">
                                 jason.telanoff@gmail.com
-                            </a>
+                            </Link>
                         </li>
                         <li className="mb-2">
-                            <a href="mailto:json22@berkeley.edu" className="text-blue-500 hover:underline">
+                            <Link href="mailto:json22@berkeley.edu" target="_blank" className="text-blue-500 hover:underline">
                                 json22@berkeley.edu
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -29,19 +30,19 @@ export default function Connect() {
                     <h2 className="text-2xl font-semibold mb-4">Social Links:</h2>
                     <ul className="list-disc pl-6">
                         <li className="mb-2">
-                            <a href="https://github.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <Link href="https://github.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 GitHub
-                            </a>
+                            </Link>
                         </li>
                         <li className="mb-2">
-                            <a href="https://www.linkedin.com/in/jason-telanoff/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <Link href="https://www.linkedin.com/in/jason-telanoff/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 LinkedIn
-                            </a>
+                            </Link>
                         </li>
                         <li className="mb-2">
-                            <a href="https://www.devpost.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <Link href="https://www.devpost.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 Devpost
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

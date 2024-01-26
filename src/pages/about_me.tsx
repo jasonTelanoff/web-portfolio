@@ -83,7 +83,7 @@ export default function AboutMe() {
                             In addition to coding, I have a keen interest in cooking, Minecraft, and hiking. I believe in continuous learning and strive to improve my skills every day.
                         </p>
                         <p className="text-lg">
-                            Feel free to explore my <Link href='/projects' className="text-blue-500 hover:underline">projects</Link> to get a glimpse of my work. If you have any questions or would like to collaborate, don&apos;t hesitate to reach out through the <Link href='/projects' className="text-blue-500 hover:underline">contact</Link> page!
+                            Feel free to explore my <Link target="_blank" href='/projects' className="text-blue-500 hover:underline">projects</Link> to get a glimpse of my work. If you have any questions or would like to collaborate, don&apos;t hesitate to reach out through the <Link target="_blank" href='/projects' className="text-blue-500 hover:underline">contact</Link> page!
                         </p>
                     </div>
                 </div>
