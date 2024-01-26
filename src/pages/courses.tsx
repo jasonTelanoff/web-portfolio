@@ -154,7 +154,7 @@ const Coursework = () => {
             <Navbar />
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>
-            <p>*Note that none of the "More Details" links currently work, though the other 2 do!</p>
+            <p>*Note that none of the &quot;More Details&quot; links currently work, though the other 2 do!</p>
             <p>&nbsp;</p>
 
             {semesters.map((semester, index) => (
