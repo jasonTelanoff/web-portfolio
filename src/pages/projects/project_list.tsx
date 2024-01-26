@@ -7,7 +7,7 @@ interface Project {
     in_progress?: boolean;
 }
 
-const projects = [
+export const projects = [
     {
         title: 'Co-Fu',
         description: 'A mobile app built to connect home cooks with their community. (Vertical winner of the 2021 HackSC Hackathon)',
@@ -75,5 +75,3 @@ const projects = [
         language: 'Python (Django, Vue.js)',
     },
 ];
-
-export default projects;

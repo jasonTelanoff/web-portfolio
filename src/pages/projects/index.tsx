@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
-import projects from './project_list';
+import { projects } from './project_list';
 
 const Projects = () => {
     return (
