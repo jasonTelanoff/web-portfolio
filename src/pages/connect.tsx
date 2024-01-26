@@ -39,7 +39,7 @@ export default function Connect() {
                             </a>
                         </li>
                         <li className="mb-2">
-                            <a href="devpost.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <a href="https://www.devpost.com/jasonTelanoff" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                 Devpost
                             </a>
                         </li>
