@@ -43,10 +43,10 @@ export default function Particles({
         }
         initCanvas();
         firstAnimate();
-        window.addEventListener("resize", initCanvas);
+        window.addEventListener("resize", resizeCanvas);
 
         return () => {
-            window.removeEventListener("resize", initCanvas);
+            window.removeEventListener("resize", resizeCanvas);
         };
     }, []);
 
@@ -59,6 +59,7 @@ export default function Particles({
     }, [refresh]);
 
     const initCanvas = () => {
+        circles.current.length = 0;
         resizeCanvas();
         drawParticles();
     };
@@ -92,7 +93,6 @@ export default function Particles({
 
     const resizeCanvas = () => {
         if (canvasContainerRef.current && canvasRef.current && context.current) {
-            circles.current.length = 0;
             canvasSize.current.w = canvasContainerRef.current.offsetWidth;
             canvasSize.current.h = canvasContainerRef.current.offsetHeight;
             canvasRef.current.width = canvasSize.current.w * dpr;
@@ -207,8 +207,8 @@ export default function Particles({
             if (neighbouringBoids.length != 0) {
                 if (Math.hypot(circle.x - mouse.current.x, circle.y - mouse.current.y) < mouseInfluence) {
                     // TODO: Decide on attract or repel
-                    circle.dx += (circle.x - mouse.current.x) / 300;
-                    circle.dy += (circle.y - mouse.current.y) / 300;
+                    circle.dx += (circle.x - mouse.current.x) / 100;
+                    circle.dy += (circle.y - mouse.current.y) / 100;
                 } else {
                     v1 = rule1(circle, neighbouringBoids);
                     v2 = rule2(circle, neighbouringBoids);

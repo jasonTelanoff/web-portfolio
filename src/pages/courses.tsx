@@ -150,7 +150,7 @@ const Coursework = () => {
     ];
 
     return (
-        <div className="container mx-auto my-16 px-4 pb-8 font-sourceCode">
+        <div className="container mx-auto my-16 px-4 pb-8">
             <Navbar />
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>

@@ -1,11 +1,30 @@
+'use client';
+
 import React from "react";
 import Particles from "../components/particles";
 import Navbar from "@/components/navbar";
+import Typewriter from 'typewriter-effect';
 
 export default function Home() {
+  const shuffleList = (list: string[]) => {
+    const firstElement = list[0];
+    const shuffledList = [...list.slice(1)]; // Copy the array excluding the first element
+
+    // Fisher-Yates Shuffle for the rest of the elements
+    for (let i = shuffledList.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]];
+    }
+
+    return [firstElement, ...shuffledList];
+  };
+
+  const originalList = ['Software Engineer', 'Mobile Developer', 'Web Developer', 'Full Stack Developer', 'Computer Science Student', 'Math Student', 'Minecrafter', 'Hiker', 'Cook', 'Game Developer', 'UI/UX Designer', 'Critical Thinker', 'Problem Solver', 'Innovator', 'Leader', 'Team Player', 'Learner', 'Teacher', 'Friend', 'Human', 'Graphics Designer'];
+  const shuffledList = shuffleList(originalList);
+
   return (
     <main>
-      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden font-sourceCode">
+      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden">
         <nav className="my-16 animate-fade-in">
           <Navbar />
         </nav>
@@ -27,8 +46,15 @@ export default function Home() {
 
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-        <h2 className="z-10 text-xl duration-1000 animate-fade-in font-display sm:text-1xl md:text-2xl">
-          Software Engineer
+        <h2 className="z-10 text-xl duration-1000 animate-fade-in sm:text-1xl md:text-2xl">
+          <Typewriter
+            options={{
+              strings: shuffledList,
+              autoStart: true,
+              loop: true,
+              delay: 100,
+            }}
+          />
         </h2>
 
         <div className="my-16 text-center animate-fade-in">

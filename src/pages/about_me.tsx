@@ -1,17 +1,18 @@
 import React from "react";
 import Navbar from "../components/navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutMe() {
     return (
-        <div className="mx-auto py-16 h-screen font-informal">
+        <div className="mx-auto py-16 h-screen">
             <Navbar />
             <div className="w-full md:w-3/4 lg:w-3/5 mx-auto mt-8 h-screen">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
                 <div className="flex items-center mb-8">
                     <Image
                         src="me.png"
-                        width={300}
+                        width={200}
                         height={200}
                         alt="Me with an 8 pack (of Pepsi)"
                         className="rounded mr-8"
@@ -27,7 +28,7 @@ export default function AboutMe() {
                             In addition to coding, I have a keen interest in cooking, Minecraft, and hiking. I believe in continuous learning and strive to improve my skills every day.
                         </p>
                         <p className="text-lg">
-                            Feel free to explore my projects to get a glimpse of my work. If you have any questions or would like to collaborate, don&apos;t hesitate to reach out through the contact page!
+                            Feel free to explore my <Link href='/projects' className="text-blue-500 hover:underline">projects</Link> to get a glimpse of my work. If you have any questions or would like to collaborate, don&apos;t hesitate to reach out through the <Link href='/projects' className="text-blue-500 hover:underline">contact</Link> page!
                         </p>
                     </div>
                 </div>

@@ -27,10 +27,11 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+                // sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
                 display: ["var(--font-calsans)"],
-                sourceCode: ['Source Code Pro', ...defaultTheme.fontFamily.mono],
-                informal: ['Single Day', ...defaultTheme.fontFamily.sans],
+                sans: ['Source Code Pro', ...defaultTheme.fontFamily.sans],
+                sourceCode: ['Source Code Pro', ...defaultTheme.fontFamily.sans],
+                // informal: ['Single Day', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
                 "gradient-radial":
