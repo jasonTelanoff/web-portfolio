@@ -5,7 +5,7 @@ export default function Connect() {
     return (
         <div className="h-screen m-16">
             <Navbar />
-            <div className="container mx-auto my-8 p-8 max-w-md shadow-md rounded-md">
+            <div className="container mx-auto my-8 p-8 max-w-md shadow-md rounded-md font-informal">
                 <h1 className="text-4xl font-bold mb-6">Connect with Me</h1>
                 <p>*Note: I don&apos;t like this page&apos;s UI as much as you.</p>
 

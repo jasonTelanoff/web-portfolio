@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function AboutMe() {
     return (
-        <main className="container mx-auto my-16 h-screen">
+        <div className="mx-auto py-16 h-screen font-informal">
             <Navbar />
-            <div className="w-full md:w-3/4 lg:w-3/5 mx-auto mt-8">
+            <div className="w-full md:w-3/4 lg:w-3/5 mx-auto mt-8 h-screen">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
                 <div className="flex items-center mb-8">
                     <Image
@@ -33,6 +33,6 @@ export default function AboutMe() {
                 </div>
                 *Note: This website is still under construction and the image WILL be replaced with a better one soon!
             </div>
-        </main>
+        </div>
     );
 }

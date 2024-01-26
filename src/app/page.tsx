@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden">
+      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden font-sourceCode">
         <nav className="my-16 animate-fade-in">
           <Navbar />
         </nav>
@@ -21,7 +21,7 @@ export default function Home() {
           neighbourhoodSize={100}
           tooClose={10}
         />
-        <h1 className="z-10 text-x4 duration-1000 animate-title font-display sm:text-1xl md:text-8xl">
+        <h1 className="z-10 text-x4 duration-1000 animate-title sm:text-1xl md:text-8xl">
           Jason Telanoff
         </h1>
 
