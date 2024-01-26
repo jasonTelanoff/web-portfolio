@@ -27,12 +27,15 @@ const Projects = () => {
                     <div className="flex flex-row gap-4">
                         {project.demoLink && (
                             <Link href={project.demoLink} passHref>
+                                <p className="text-blue-500">
+                                    Demo
+                                </p>
                             </Link>
                         )}
                         {project.githubLink && (
                             <Link href={project.githubLink} passHref>
                                 <p className="text-blue-500">
-                                    <i className="fab fa-github"></i> GitHub
+                                    GitHub
                                 </p>
                             </Link>
                         )}
