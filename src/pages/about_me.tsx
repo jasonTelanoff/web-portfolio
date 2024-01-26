@@ -4,11 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
 
+interface SkillSection {
+    title: string;
+    skills: string[];
+    nonSkills: string[];
+}
 const skills = [
     {
         title: "Coding Languages",
         skills: [
-            "Java", "Dart", "Python", "Javascript", "C", "C++", "HTML",
+            "Java", "Python", "Javascript", "Go Lang", "Dart", "C", "C++",
         ],
         nonSkills: [
             "Maching Language",
@@ -98,11 +103,11 @@ export default function AboutMe() {
                         {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p> */}
                     </div>
                     <div className="flex flex-wrap justify-center align-top">
-                        {skills.map((skill, _) => (
+                        {skills.map((skill: SkillSection, index) => (
                             <div className="p-4 lg:w-1/4 sm:w-1/2 w-full">
                                 <h2 className="font-medium title-font tracking-widest mb-4 text-sm text-center sm:text-left">{skill.title}</h2>
                                 <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                                    {skill.skills.map((_skill, _) => (
+                                    {skill.skills.map((_skill: string, _) => (
                                         <div>
                                             <span className="bg-green-100 text-green-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" className="w-3 h-3" viewBox="0 0 24 24">
@@ -112,7 +117,7 @@ export default function AboutMe() {
                                             {_skill}
                                         </div>
                                     ))}
-                                    {skill.nonSkills.map((_skill, _) => (
+                                    {skill.nonSkills.map((_skill: string, _) => (
                                         <div>
                                             <span className="bg-red-100 text-red-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" className="w-3 h-3" viewBox="0 0 24 24">
