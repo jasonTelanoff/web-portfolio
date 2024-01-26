@@ -50,8 +50,8 @@ export default function Connect() {
                     <h2 className="text-2xl font-semibold mb-4">Resume:</h2>
                     <p className="mb-4">Download my resume:</p>
                     <a
-                        href="/path/to/your/resume.pdf"  // Replace with the actual path to your resume
-                        download="Your_Name_Resume.pdf"
+                        href="Resume.pdf"  // Replace with the actual path to your resume
+                        download="Jason_Telanoff.pdf"
                         className="bg-blue-500 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
                     >
                         Download Resume
