@@ -107,8 +107,8 @@ export default function Particles({
         const x = Math.floor(Math.random() * canvasSize.current.w);
         const y = Math.floor(Math.random() * canvasSize.current.h);
         const size = Math.floor(Math.random() * (maxSize - minSize)) + minSize;
-        const dx = (Math.random() - 0.5) * 0;
-        const dy = (Math.random() - 0.5) * 0;
+        const dx = (Math.random() - 0.5);
+        const dy = (Math.random() - 0.5);
         return {
             x,
             y,
@@ -206,6 +206,7 @@ export default function Particles({
 
             if (neighbouringBoids.length != 0) {
                 if (Math.hypot(circle.x - mouse.current.x, circle.y - mouse.current.y) < mouseInfluence) {
+                    // TODO: Decide on attract or repel
                     circle.dx += (circle.x - mouse.current.x) / 300;
                     circle.dy += (circle.y - mouse.current.y) / 300;
                 } else {
