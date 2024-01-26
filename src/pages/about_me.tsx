@@ -106,7 +106,7 @@ export default function AboutMe() {
                                     {skill.skills.map((_skill) => (
                                         <div>
                                             <span className="bg-green-100 text-green-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" class="w-3 h-3" viewBox="0 0 24 24">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" className="w-3 h-3" viewBox="0 0 24 24">
                                                     <path d="M20 6L9 17l-5-5"></path>
                                                 </svg>
                                             </span>
@@ -116,7 +116,7 @@ export default function AboutMe() {
                                     {skill.nonSkills.map((_skill) => (
                                         <div>
                                             <span className="bg-red-100 text-red-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" class="w-3 h-3" viewBox="0 0 24 24">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" className="w-3 h-3" viewBox="0 0 24 24">
                                                     <path d="M6 18L18 6M6 6l12 12"></path>
                                                 </svg>
                                             </span>
