@@ -35,7 +35,7 @@ const MastermindGame: React.FC<ComponentProps> = (props: ComponentProps) => {
             console.log(event);
 
             const mouseX = event.offsetX;
-            const mouseY = event.offsetY;
+            const mouseY = event.offsetY + 10;
 
             if (winToggle) {
                 if (

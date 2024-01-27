@@ -19,7 +19,7 @@ export default function Home() {
     return [firstElement, ...shuffledList];
   };
 
-  const originalList = ['Software Engineer', 'Mobile Developer', 'Web Developer', 'Full Stack Developer', 'Computer Science Student', 'Math Student', 'Minecrafter', 'Hiker', 'Cook', 'Game Developer', 'UI/UX Designer', 'Critical Thinker', 'Problem Solver', 'Innovator', 'Leader', 'Team Player', 'Learner', 'Teacher', 'Friend', 'Human', 'Graphics Designer'];
+  const originalList = ['Software Engineer', 'Mobile Developer', 'Web Developer', 'Full Stack Developer', 'Computer Science Student', 'Math Student', 'Minecrafter', 'Hiker', 'Cook', 'Game Developer', 'UI/UX Designer', 'Critical Thinker', 'Problem Solver', 'Innovator', 'Leader', 'Team Player', 'Learner', 'Teacher', 'Friend', 'Human', 'Graphics Developer'];
   const shuffledList = shuffleList(originalList);
 
   return (
@@ -40,7 +40,7 @@ export default function Home() {
           neighbourhoodSize={100}
           tooClose={10}
         />
-        <h1 className="z-10 text-x4 duration-1000 animate-title sm:text-1xl md:text-8xl">
+        <h1 className="z-10 duration-1000 animate-title sm:text-6xl md:text-8xl lg:text-8x1">
           Jason Telanoff
         </h1>
 

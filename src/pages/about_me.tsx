@@ -99,10 +99,10 @@ export default function AboutMe() {
             <section className="body-font">
                 <div className="container px-5 pb-24 mx-auto">
                     <div className="text-center mb-20">
-                        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font mb-4">What I bring to the table</h1>
+                        <h1 className="sm:text-3xl text-3xl font-medium text-center title-font mb-4">What I bring to the table</h1>
                         {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p> */}
                     </div>
-                    <div className="flex flex-wrap justify-center align-top">
+                    <div className="flex flex-wrap justify-center align-top text-lg">
                         {skills.map((skill: SkillSection, index) => (
                             <div key={index} className="p-4 lg:w-1/4 sm:w-1/2 w-full">
                                 <h2 className="font-medium title-font tracking-widest mb-4 text-sm text-center sm:text-left">{skill.title}</h2>

@@ -13,12 +13,11 @@ const Projects = () => {
 
             <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {projects.map((project, index) => (
-                    <div key={index} className="p-4 border border-gray-300 rounded-lg">
-                        <div className="flex flex-row items-start mb-2">
-                            <h2 className="text-2xl font-bold">{project.title} |&nbsp;</h2>
-                            <p>
-                                {project.language}
-                            </p>
+                    <div key={index} className={`p-4 border-2 rounded-lg`} style={{ borderColor: project.color ?? project.languageColor }}>
+                        <div className="flex flex-row mb-2 align-bottom">
+                            <h2 className="text-2xl font-bold">{project.title}</h2>
+                            <div className="w-px bg-gray-300 mx-4" />
+                            <p style={{ color: project.languageColor }}>{project.language}</p>
                         </div>
                         {project.in_progress && (
                             <p className="text-orange-500 mb-2">In Progress</p>
@@ -42,9 +41,10 @@ const Projects = () => {
                             )}
                         </div>
                     </div>
-                ))}
-            </div>
-        </div>
+                ))
+                }
+            </div >
+        </div >
     );
 };
 
