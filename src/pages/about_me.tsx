@@ -72,7 +72,7 @@ export default function AboutMe() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ml-32">About Me</h1>
                 <div className="flex items-center mb-8">
                     <Image
-                        src="me.png"
+                        src="me2.jfif"
                         width={200}
                         height={200}
                         alt="Me with an 8 pack (of Pepsi)"
