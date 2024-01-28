@@ -39,7 +39,7 @@ export default function Home() {
         neighbourhoodSize={100}
         tooClose={10}
       />
-      <h1 className="text-4xl duration-1000 animate-fade-in sm:text-2xl md:text-8xl lg:text-12x1">
+      <h1 className="text-4xl duration-1000 animate-title sm:text-2xl md:text-8xl lg:text-12x1">
         Jason Telanoff
       </h1>
 
