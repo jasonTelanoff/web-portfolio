@@ -16,16 +16,16 @@ const skills = [
             "Java", "Python", "Javascript", "Go Lang", "Dart", "C", "C++",
         ],
         nonSkills: [
-            "Maching Language",
+            "Machine Code",
         ],
     },
     {
         title: "Soft Skills",
         skills: [
-            "Critical Thinking", "Leadership", "Quick Learner", "Adaptability", "Problem Solving", "Communication", "Logical Reasoning"
+            "Critical Thinking", "Leadership", "Quick Learner", "Adaptability", "Problem Solving", "Communication", "Logical Reasoning", "Baking"
         ],
         nonSkills: [
-            "Slacking Off", "Incessant Humming", "Arrogance"
+            "Napping", "Incessant Humming", "Juggling",
         ],
     },
     {
@@ -59,7 +59,9 @@ const skills = [
             "Long Division",
         ],
         nonSkills: [
-            "Addition"
+            "Divsision by 0",
+            "Solution to the Riemann Hypothesis",
+            "Proof of Fermat's Last Theorem",
         ],
     }
 ];
