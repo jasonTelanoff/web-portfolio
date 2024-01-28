@@ -135,57 +135,55 @@ const Coursework = () => {
         <div className="container mx-auto my-16 px-4 pb-8">
             <Navbar />
 
-            <div className="flex flex-row justify-between align-top">
-                <div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>
-                    <p>*Note that none of the &quot;More Details&quot; links currently work, though the other 2 do!</p>
-                    <p>&nbsp;</p>
+            <div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>
+                <p>*Note that none of the &quot;More Details&quot; links currently work, though the other 2 do!</p>
+                <p>&nbsp;</p>
 
-                    {semesters.map((semester, index) => (
-                        <div key={index} className="mb-8 flex">
-                            <div className="w-32 text-right">
-                                <h2 className="text-2xl font-bold mb-4">{semester.semester}</h2>
-                            </div>
-
-                            <div className="w-px bg-gray-300 mx-4" />
-                            <div className="flex flex-col w-1/2">
-                                {semester.courses.map((course: Course, courseIndex) => (
-                                    <div key={courseIndex} className="mb-4">
-                                        <p className="text-lg font-bold">{course.title}</p>
-                                        <p className="text-gray-600 mb-2">{course.description}</p>
-                                        <div className='flex flex-row mb-2'>
-                                            {course.courseLink && (
-                                                <div className='flex flex-row'>
-                                                    <Link target="_blank" href={course.courseLink}>
-                                                        <p className="text-blue-500 hover:underline">Course Link</p>
-                                                    </Link>
-                                                    {(course.courseLink || course.detailsLink) && (
-                                                        <p>&nbsp;|&nbsp;</p>
-                                                    )}
-                                                </div>
-                                            )}
-                                            {course.catalogLink && (
-                                                <div className='flex flex-row'>
-                                                    <Link target="_blank" href={course.catalogLink}>
-                                                        <p className="text-blue-500 hover:underline">Course Description</p>
-                                                    </Link>
-                                                    {course.detailsLink && (
-                                                        <p>&nbsp;|&nbsp;</p>
-                                                    )}
-                                                </div>
-                                            )}
-                                            {course.detailsLink && (
-                                                <Link target="_blank" href={course.detailsLink}>
-                                                    <p className="text-blue-500 hover:underline">More Details</p>
-                                                </Link>
-                                            )}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                {semesters.map((semester, index) => (
+                    <div key={index} className="mb-8 flex lg:flex-row flex-col justify-start">
+                        <div className="lg:w-32 lg:text-right">
+                            <h2 className="text-2xl font-bold mb-4">{semester.semester}</h2>
                         </div>
-                    ))}
-                </div>
+
+                        <div className="lg:w-px lg:h-auto lg:mx-4 lg:my-0 h-px my-4 bg-gray-300" />
+                        <div className="flex flex-col lg:w-1/2">
+                            {semester.courses.map((course: Course, courseIndex) => (
+                                <div key={courseIndex} className="mb-4">
+                                    <p className="text-lg font-bold">{course.title}</p>
+                                    <p className="text-gray-600 mb-2">{course.description}</p>
+                                    <div className='flex flex-row mb-2'>
+                                        {course.courseLink && (
+                                            <div className='flex flex-row'>
+                                                <Link target="_blank" href={course.courseLink}>
+                                                    <p className="text-blue-500 hover:underline">Course Link</p>
+                                                </Link>
+                                                {(course.courseLink || course.detailsLink) && (
+                                                    <p>&nbsp;|&nbsp;</p>
+                                                )}
+                                            </div>
+                                        )}
+                                        {course.catalogLink && (
+                                            <div className='flex flex-row'>
+                                                <Link target="_blank" href={course.catalogLink}>
+                                                    <p className="text-blue-500 hover:underline">Course Description</p>
+                                                </Link>
+                                                {course.detailsLink && (
+                                                    <p>&nbsp;|&nbsp;</p>
+                                                )}
+                                            </div>
+                                        )}
+                                        {course.detailsLink && (
+                                            <Link target="_blank" href={course.detailsLink}>
+                                                <p className="text-blue-500 hover:underline">More Details</p>
+                                            </Link>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
 
         </div>

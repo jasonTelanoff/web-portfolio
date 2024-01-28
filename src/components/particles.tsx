@@ -138,11 +138,11 @@ export default function Particles({
             const athird = 2 * Math.PI / 3;
 
             const angle = Math.atan2(dy, dx);
-            const r = 255 * Math.cos(angle);
-            const g = 255 * Math.cos(angle + athird);
-            const b = 255 * Math.cos(angle - athird);
+            const r = 255 * Math.abs(Math.cos(angle));
+            const g = 255 * Math.abs(Math.cos(angle + athird));
+            const b = 255 * Math.abs(Math.cos(angle - athird));
 
-            context.current.fillStyle = `rgb(${r}, ${g}, ${b})`;
+            context.current.fillStyle = `rgb(${r < 0 ? 0 : r}, ${g < 0 ? 0 : g}, ${b < 0 ? 0 : b})`;
 
             context.current.fill();
             context.current.setTransform(dpr, 0, 0, dpr, 0, 0);

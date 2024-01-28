@@ -1,4 +1,4 @@
-interface Project {
+export interface Project {
     title: string;
     description: string;
     demoLink?: string;
@@ -30,11 +30,59 @@ export const projects = [
     },
     {
         title: 'Mastermind',
-        description: 'An interactive language learning game for mastering vocabulary and grammar through engaging gameplay.',
+        description: 'Interactive language learning game for mastering vocabulary and grammar through engaging gameplay.',
         demoLink: 'projects/mastermind',
         githubLink: 'https://github.com/jasonTelanoff/mastermind',
         language: 'JavaScript (Processing)',
         languageColor: '#C4AF13',
+    },
+    {
+        title: 'Website Schmebsite',
+        description: 'Developed and executed a comprehensive security assessment for a file storage website, identifying and addressing potential vulnerabilities such as SQL injection and XSS attacks.',
+        language: 'JavaScript',
+        languageColor: '#C4AF13',
+    },
+    {
+        title: 'CryptoVault Storage',
+        description: 'A file storage server utilizing various cryptography techniques to ensure integrity. Users can create, update, and delete files, as well as share them with other users.',
+        language: 'GoLang',
+        languageColor: '#69D7E4',
+    },
+    {
+        title: 'C the issues',
+        description: 'A program to exploit various flaws in the C programming language and run shell commands on a server.',
+        language: 'Python',
+        languageColor: '#3673A5',
+    },
+    {
+        title: 'Machine Learning',
+        description: 'Multiple machine learning projects, including a neural network for approximating sin, classifying handwritten digits, and identifying language.',
+        language: 'Python',
+        languageColor: '#3673A5',
+    },
+    {
+        title: 'Reinforcement Learning',
+        description: 'Implementation of value iteration and Q-learning that are applied to a simulated robot controller and a simulated crawler robot. The robot controller is able to navigate a world and figure out an optimal path.',
+        language: 'Python',
+        languageColor: '#3673A5',
+    },
+    {
+        title: 'Multi-Agent Search',
+        description: 'Design and implementation of several search agents to create a version of PacMan. Reflex agents were build for ghosts and Pacman using minimax, expectimax, alpha-beta pruning, and more.',
+        language: 'Python',
+        languageColor: '#3673A5',
+    },
+    {
+        title: 'Ghostbusters',
+        description: 'Implementation of a Hidden Markov Model to track ghosts over time and a joint particle filter to track multiple ghosts simultaneously. Variable elimination, exact inference, approximate inference, and more were used to optimize the problem.',
+        language: 'Python',
+        languageColor: '#3673A5',
+    },
+    {
+        title: 'PacMan Search',
+        description: 'Implementation of several search engines in order to solve a PacMan style maze. The search engines include DFS, BFS, UCS, A* Search, and Greedy Search.',
+        language: 'Python',
+        languageColor: '#3673A5',
     },
     {
         title: 'Deques',
@@ -53,6 +101,7 @@ export const projects = [
         description: 'A game that allows the user to explore procedurally generated mazes. It offers saving and loading of worlds, as well as music that is too loud.',
         language: 'Java',
         languageColor: '#EC2025',
+        demoLink: 'projects/byow',
     },
     {
         title: 'Scheme Interpreter',
