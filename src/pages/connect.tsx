@@ -9,7 +9,6 @@ export default function Connect() {
             <Navbar />
             <div className="container mx-auto my-8 p-8 max-w-md shadow-md rounded-md font-informal">
                 <h1 className="text-4xl font-bold mb-6">Connect with Me</h1>
-                <p>*Note: I don&apos;t like this page&apos;s UI as much as you.</p>
 
                 <div className="mb-8">
                     <h2 className="text-2xl font-semibold mb-4">Emails:</h2>

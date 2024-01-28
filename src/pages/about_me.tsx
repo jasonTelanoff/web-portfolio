@@ -95,7 +95,6 @@ export default function AboutMe() {
                         </p>
                     </div>
                 </div>
-                *Note: This website is still under construction and the image WILL be replaced with a better one soon!
             </div>
             <div className="h-px bg-gray-300 mx-8 my-16" />
             <section className="body-font">
