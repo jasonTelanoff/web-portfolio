@@ -76,7 +76,7 @@ export default function AboutMe() {
                     <Image
                         src="me2.jfif"
                         width={200}
-                        height={200}
+                        height={0}
                         alt="Me with an 8 pack (of Pepsi)"
                         className="rounded mr-8"
                     />

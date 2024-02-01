@@ -13,7 +13,7 @@ export const projects = [
     {
         title: 'Co-Fu',
         description: 'A mobile app built to connect home cooks with their community. (Vertical winner of the 2021 HackSC Hackathon)',
-        // demoLink: '/projects/cofu',
+        demoLink: '/projects/cofu',
         githubLink: 'https://github.com/Cofu-HackSC',
         language: 'Dart (Flutter)',
         color: '#5C9F35',
@@ -101,7 +101,7 @@ export const projects = [
         description: 'A game that allows the user to explore procedurally generated mazes. It offers saving and loading of worlds, as well as music that is too loud.',
         language: 'Java',
         languageColor: '#EC2025',
-        demoLink: 'projects/byow',
+        // demoLink: 'projects/byow',
     },
     {
         title: 'Scheme Interpreter',

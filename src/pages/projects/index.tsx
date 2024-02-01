@@ -1,4 +1,3 @@
-// components/Projects.js
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
@@ -40,7 +39,7 @@ const Projects = () => {
                                 {project.demoLink && (
                                     <Link target="_blank" href={project.demoLink} passHref>
                                         <p className="text-blue-500">
-                                            See More
+                                            More Info
                                         </p>
                                     </Link>
                                 )}
