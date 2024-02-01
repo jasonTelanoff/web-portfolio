@@ -39,7 +39,7 @@ export const projects = [
     {
         title: 'Website Schmebsite',
         description: 'Developed and executed a comprehensive security assessment for a file storage website, identifying and addressing potential vulnerabilities such as SQL injection and XSS attacks.',
-        language: 'JavaScript',
+        language: 'JavaScript, SQL',
         languageColor: '#C4AF13',
     },
     {

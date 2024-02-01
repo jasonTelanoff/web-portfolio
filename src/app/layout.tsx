@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import './globals.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: '(prefers-color-scheme: light)',
-        url: '/icon_light.png',
-        href: '/icon_light.png',
+        url: '/icon_new.png',
+        href: '/icon_new.png',
       },
       {
         media: '(prefers-color-scheme: dark)',
-        url: '/icon_dark.png',
-        href: '/icon_dark.png',
+        url: '/icon_new.png',
+        href: '/icon_new.png',
       },
     ],
   },
