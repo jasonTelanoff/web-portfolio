@@ -10,7 +10,7 @@ export default function Mastermind() {
             <h1 className="text-6xl my-8 font-bold">Cofu</h1>
 
             <p>
-                Inspired by California's cottage kitchen program, Cofu (Community-Food) emerged as a cross-platform mobile marketplace during HackSC, USC's intense 36-hour hackathon. In a team of 3, I played dual roles – project manager and mobile developer. Despite the COVID-induced distance, our teamwork clinched us the vertical winner spot. It was a pivotal experience, giving me the chops to navigate large projects seamlessly. This hackathon wasn't just about coding; it was a lesson in leadership and the first app where I confidently steered a ship through the hackathon storm.
+                Inspired by California`&apos;s cottage kitchen program, Cofu (Community-Food) emerged as a cross-platform mobile marketplace during HackSC, USC`&apos;s intense 36-hour hackathon. In a team of 3, I played dual roles – project manager and mobile developer. Despite the COVID-induced distance, our teamwork clinched us the vertical winner spot. It was a pivotal experience, giving me the chops to navigate large projects seamlessly. This hackathon wasn`&apos;t just about coding; it was a lesson in leadership and the first app where I confidently steered a ship through the hackathon storm.
             </p>
 
             <p>
