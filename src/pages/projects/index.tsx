@@ -11,6 +11,10 @@ const Projects = () => {
                 <Navbar />
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 col-span-full">Projects</h1>
+                <p>There are many more projects on my&nbsp;
+                    <Link href="https://github.com/jasonTelanoff" target="_blank" className="text-blue-500 hover:underline">GitHub</Link> and&nbsp;
+                    <Link href="https://www.devpost.com/jasonTelanoff" target="_blank" className="text-blue-500 hover:underline">Devpost</Link>!
+                </p>
 
                 <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project: Project, index) => (

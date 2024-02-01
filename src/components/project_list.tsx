@@ -22,7 +22,7 @@ export const projects = [
     {
         title: 'Care-ma',
         description: 'A social media app built to spread joy and positivity.',
-        // demoLink: '/projects/carema',
+        demoLink: 'https://devpost.com/software/care-ma-txk7jb',
         githubLink: 'https://github.com/jonathanferrari/carema',
         language: 'Dart (Flutter)',
         color: "#FFB7B3",
@@ -50,7 +50,7 @@ export const projects = [
     },
     {
         title: 'C the issues',
-        description: 'A program to exploit various flaws in the C programming language and run shell commands on a server.',
+        description: 'A program to exploit various flaws in the C programming language and run shell commands on a server. GDB was used to find and debug exploits, and python was used to perform the commands necessary.',
         language: 'Python',
         languageColor: '#3673A5',
     },

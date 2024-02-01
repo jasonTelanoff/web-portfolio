@@ -14,7 +14,7 @@ export default function Mastermind() {
             </p>
 
             <p>
-                Learn more on our <Link target="_blank" href="https://devpost.com/software/cofu#updates" className="text-blue-500 hover:underline font-bold">Devpost</Link> page!
+                Learn more on our <Link target="_blank" href="https://devpost.com/software/cofu" className="text-blue-500 hover:underline font-bold">Devpost</Link> page!
             </p>
 
             <div className="flex flex-row mt-16">
