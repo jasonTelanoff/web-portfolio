@@ -33,7 +33,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/connect/_app.tsx",
-    "src/pages/projects/tree_fractal_generator.js"
+    "src/pages/projects/tree_fractal_generator.js",
+    "src/pages/_app.js"
   ],
   "exclude": [
     "node_modules"
