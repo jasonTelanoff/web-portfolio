@@ -13,10 +13,10 @@ const skills = [
     {
         title: "Coding Languages",
         skills: [
-            "Java", "Python", "Javascript", "Go Lang", "Dart", "C", "C++",
+            "Java", "Python", "Javascript", "Go", "Dart", "C", "C++","C#", "RISC-V", "Machine Code"
         ],
         nonSkills: [
-            "Machine Code",
+            "Symple",
         ],
     },
     {
