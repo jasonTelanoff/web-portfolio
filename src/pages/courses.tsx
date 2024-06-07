@@ -13,6 +13,21 @@ interface Course {
 const Coursework = () => {
     const semesters = [
         {
+            semester: 'Summer 2024',
+            courses: [
+                {
+                    title: 'Introduction to Complex Analysis',
+                    description: 'Analytic functions of a complex variable. Cauchy\'s integral theorem, power series, Laurent series, singularities of analytic functions, the residue theorem with application to definite integrals. Some additional topics such as conformal mapping.',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-summer-math-185-002-lec-002',
+                },
+                {
+                    title: 'Numerical Analysis',
+                    description: 'Programming for numerical calculations, round-off error, approximation and interpolation, numerical quadrature, and solution of ordinary differential equations.',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-summer-math-w128a-001-wbl-001',
+                },
+            ],
+        },
+        {
             semester: 'Spring 2024',
             courses: [
                 {
