@@ -154,7 +154,7 @@ const Coursework = () => {
                                         {course.courseLink && (
                                             <div className='flex flex-row'>
                                                 <Link target="_blank" href={course.courseLink}>
-                                                    <p className="text-blue-500 hover:underline">Course Link</p>
+                                                    <p className="text-blue-500 hover:underline">Course Website</p>
                                                 </Link>
                                                 {(course.courseLink || course.detailsLink) && (
                                                     <p>&nbsp;|&nbsp;</p>
