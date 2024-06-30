@@ -101,7 +101,7 @@ export default function AboutMe() {
                 <div className="container px-5 pb-24 mx-auto">
                     <div className="text-center mb-20">
                         <h1 className="sm:text-3xl text-3xl font-medium text-center title-font mb-4">What I bring to the table</h1>
-                        {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p> */}
+                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">(Other than food)</p>
                     </div>
                     <div className="flex flex-wrap justify-center align-top text-lg">
                         {skills.map((skill: SkillSection, index) => (
