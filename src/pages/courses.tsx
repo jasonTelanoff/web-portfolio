@@ -82,7 +82,7 @@ const Coursework = () => {
                 },
                 {
                     title: 'Directed Group Studies for Advanced Undergraduates',
-                    description: 'Group study of selected topics for undergraduates under the supervision of a faculty member. Topics may vary from year to year.',
+                    description: 'Lead students in developing data science curriculum through DS modules program for other courses. Such curriculum includes data analysis, data visualization, and machine learning.',
                 },
             ],
         },

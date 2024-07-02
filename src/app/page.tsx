@@ -19,7 +19,7 @@ export default function Home() {
     return [firstElement, ...shuffledList];
   };
 
-  const originalList = ['Software Engineer', 'Mobile Developer', 'Web Developer', 'Full Stack Developer', 'Computer Science Student', 'Math Student', 'Minecrafter', 'Hiker', 'Cook', 'Game Developer', 'UI/UX Designer', 'Critical Thinker', 'Problem Solver', 'Innovator', 'Leader', 'Team Player', 'Learner', 'Teacher', 'Friend', 'Human', 'Graphics Developer'];
+  const originalList = ['Software Engineer', 'Mobile Developer', 'Web Developer', 'Full Stack Developer', 'Computer Science Student', 'Math Student', 'Minecrafter', 'Hiker', 'Cook', 'Game Developer', 'UI/UX Designer', 'Critical Thinker', 'Problem Solver', 'Innovator', 'Leader', 'Team Player', 'Learner', 'Teacher', 'Friend', 'Human', 'Computer Graphics Developer', 'non-Artificial Intelligence', 'Computer Securities Developer', 'Computer Architect', 'Hackathon Winner', 'Analyst', ''];
   const shuffledList = shuffleList(originalList);
 
   return (
