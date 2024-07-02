@@ -51,7 +51,7 @@ export default function Connect() {
                     <h2 className="text-2xl font-semibold mb-4">Resume:</h2>
                     <p className="mb-4">Download my resume:</p>
                     <a
-                        href="Resume 6-7-24.pdf"  // Replace with the actual path to your resume
+                        href="Resume 7-1-24.pdf"  // Replace with the actual path to your resume
                         download="Jason_Telanoff.pdf"
                         className="bg-blue-500 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
                     >
