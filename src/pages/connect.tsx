@@ -15,7 +15,7 @@ export default function Connect() {
                     <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
                         <div className="flex justify-center mb-4">
                             <Image
-                                src="/emails_icon.png"
+                                src="/web-portfolio/emails_icon.png"
                                 width={50}
                                 height={50}
                                 alt="Emails"
@@ -37,7 +37,7 @@ export default function Connect() {
                     <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
                         <div className="flex justify-center mb-4">
                             <Image
-                                src="/links_icon.png"
+                                src="/web-portfolio/links_icon.png"
                                 width={50}
                                 height={40}
                                 alt="Socials"
@@ -49,7 +49,7 @@ export default function Connect() {
                             <div className="inline-block">
                                 <a href="https://github.com/jasonTelanoff" target="_blank">
                                     <Image
-                                        src="/github_icon.png"
+                                        src="/web-portfolio/github_icon.png"
                                         width={40}
                                         height={40}
                                         alt="GitHub"
@@ -61,7 +61,7 @@ export default function Connect() {
                             <div className="inline-block">
                                 <a href="https://www.linkedin.com/in/jason-telanoff/" target="_blank">
                                     <Image
-                                        src="/linkedin_icon.png"
+                                        src="/web-portfolio/linkedin_icon.png"
                                         width={40}
                                         height={40}
                                         alt="LinkedIn"
@@ -73,7 +73,7 @@ export default function Connect() {
                             <div className="inline-block">
                                 <a href="https://www.devpost.com/jasonTelanoff" target="_blank">
                                     <Image
-                                        src="/devpost_icon.png"
+                                        src="/web-portfolio/devpost_icon.png"
                                         width={50}
                                         height={50}
                                         alt="Devpost"
@@ -87,7 +87,7 @@ export default function Connect() {
                     <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
                         <div className="flex justify-center mb-4">
                             <Image
-                                src="/document_icon.png"
+                                src="/web-portfolio/document_icon.png"
                                 width={50}
                                 height={50}
                                 alt="Resume"
