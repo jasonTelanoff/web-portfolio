@@ -11,6 +11,24 @@ export interface Project {
 
 export const projects = [
     {
+        title: 'Cards Against my Sanity',
+        description: 'A mobile app implementation of the party game Cards Against Humanity using a cross platform Flutter app and Express.js backend using websockets.',
+        language: 'Dart (Flutter), Express.js',
+        languageColor: '#2CB7F6',
+    },
+    {
+        title: 'Chess AI',
+        description: '(In progress) A chess AI that uses minimax, alpha-beta pruning, and monte carlo tree search to play chess against a human player. It features several different techniques to evaluate the board state and make decisions.',
+        language: 'Javascript',
+        languageColor: '#C4AF13',
+    },
+    {
+        title: 'Connect 4 AI',
+        description: '(In progress) A connect 4 neural network that uses reinforcement learning to play connect 4 against a human player. The neural network is trained on user input, allowing the user to experience the improvement.',
+        language: 'Javascript',
+        languageColor: '#C4AF13',
+    },
+    {
         title: 'Co-Fu',
         description: 'A mobile app built to connect home cooks with their community. (Vertical winner of the 2021 HackSC Hackathon)',
         demoLink: '/projects/cofu',
