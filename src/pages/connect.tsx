@@ -9,47 +9,26 @@ export default function Connect() {
         <div className="mx-16 pt-16 h-screen flex flex-col justify-between">
             <Navbar />
             <div className="container mx-auto my-8 p-8 shadow-md rounded-md font-informal">
-                <h1 className="text-4xl font-bold mb-6 text-center">Connect with Me</h1>
-
-                <div className="grid grid-cols-6 gap-4 mx-auto">
-                    <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
-                        <div className="flex justify-center mb-4">
-                            <Image
-                                src="/web-portfolio/emails_icon.png"
-                                width={50}
-                                height={50}
-                                alt="Emails"
-                                className="rounded"
-                                style={{ objectFit: "cover" }}
-                            />
-                        </div>
-                        <p>
-                            <Link href="mailto:jason.telanoff@gmail.com" target="_blank" className="text-blue-500 hover:underline">
-                                jason.telanoff@gmail.com
-                            </Link>
-                        </p>
-                        <p>
-                            <Link href="mailto:json22@berkeley.edu" target="_blank" className="text-blue-500 hover:underline">
-                                json22@berkeley.edu
-                            </Link>
-                        </p>
-                    </div>
-                    <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
-                        <div className="flex justify-center mb-4">
-                            <Image
-                                src="/web-portfolio/links_icon.png"
-                                width={50}
-                                height={40}
-                                alt="Socials"
-                                className="rounded"
-                                style={{ objectFit: "cover" }}
-                            />
-                        </div>
-                        <div className="flex items-center justify-center space-x-4">
+                <div className="flex">
+                    <div className="w-2/3 p-4">
+                        <h1 className="text-4xl font-bold mb-6">Connect with Me</h1>
+                        <div className="flex space-x-4">
+                            <div className="inline-block">
+                                <a href="mailto:json22@berkeley.edu" target="_blank">
+                                    <Image
+                                        src="emails_icon.png"
+                                        width={45}
+                                        height={45}
+                                        alt="Email"
+                                        className="rounded"
+                                        style={{ objectFit: "cover" }}
+                                    />
+                                </a>
+                            </div>
                             <div className="inline-block">
                                 <a href="https://github.com/jasonTelanoff" target="_blank">
                                     <Image
-                                        src="/web-portfolio/github_icon.png"
+                                        src="github_icon.png"
                                         width={40}
                                         height={40}
                                         alt="GitHub"
@@ -61,7 +40,7 @@ export default function Connect() {
                             <div className="inline-block">
                                 <a href="https://www.linkedin.com/in/jason-telanoff/" target="_blank">
                                     <Image
-                                        src="/web-portfolio/linkedin_icon.png"
+                                        src="linkedin_icon.png"
                                         width={40}
                                         height={40}
                                         alt="LinkedIn"
@@ -73,9 +52,9 @@ export default function Connect() {
                             <div className="inline-block">
                                 <a href="https://www.devpost.com/jasonTelanoff" target="_blank">
                                     <Image
-                                        src="/web-portfolio/devpost_icon.png"
-                                        width={50}
-                                        height={50}
+                                        src="devpost_icon.png"
+                                        width={40}
+                                        height={40}
                                         alt="Devpost"
                                         className="rounded"
                                         style={{ objectFit: "cover" }}
@@ -83,25 +62,22 @@ export default function Connect() {
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-span-4 md:col-span-2 mb-8 border border-gray-300 rounded-lg p-6">
-                        <div className="flex justify-center mb-4">
-                            <Image
-                                src="/web-portfolio/document_icon.png"
-                                width={50}
-                                height={50}
-                                alt="Resume"
-                                className="rounded"
-                                style={{ objectFit: "cover" }}
-                            />
-                        </div>
                         <a
                             href="Resume 7-1-24.pdf"
                             download="Jason_Telanoff.pdf"
-                            className="text-blue-500 hover:underline block"
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8 inline-block"
                         >
                             Download Resume
                         </a>
+                    </div>
+                    <div className="w-1/3 p-4">
+                        <Image
+                            src="me2.jfif"
+                            width={200}
+                            height={0}
+                            alt="Me with an 8 pack (of Pepsi)"
+                            className="rounded"
+                        />
                     </div>
                 </div>
             </div>

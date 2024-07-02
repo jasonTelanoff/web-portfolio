@@ -13,6 +13,26 @@ interface Course {
 const Coursework = () => {
     const semesters = [
         {
+            semester: 'Fall 2024 (Intended)',
+            courses: [
+                {
+                    title: 'Introduction to Machine Learning',
+                    description: 'Theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-189-001-lec-001',
+                },
+                {
+                    title: 'Introduction to Database Systems',
+                    description: 'Access methods and file systems to facilitate data access. Hierarchical, network, relational, and object-oriented data models, application generators, browsers, report writers, and transaction processing.',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-186-001-lec-001',
+                },
+                {
+                    title: 'Introduction to Software Engineering',
+                    description: 'Ideas and techniques for designing, developing, and modifying large software systems. Service-oriented architecture, behavior-driven design with user stories, cloud computing, test-driven development, automated testing, and much more.',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-169a-001-lec-001',
+                },
+            ],
+        },
+        {
             semester: 'Summer 2024',
             courses: [
                 {
@@ -152,7 +172,9 @@ const Coursework = () => {
 
             <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>
-
+                <div className='mb-8 lg:w-1/2'>
+                    Here's a list of courses I've taken or plan to take during my time at UC Berkeley. I've included a brief description of each course, as well as links to the course website, course description, and additional details where available.
+                </div>
                 {semesters.map((semester, index) => (
                     <div key={index} className="mb-8 flex lg:flex-row flex-col justify-start">
                         <div className="lg:w-32 lg:text-right">
