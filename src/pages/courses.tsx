@@ -173,7 +173,7 @@ const Coursework = () => {
             <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Coursework</h1>
                 <div className='mb-8 lg:w-1/2'>
-                    Here's a list of courses I've taken or plan to take during my time at UC Berkeley. I've included a brief description of each course, as well as links to the course website, course description, and additional details where available.
+                    Here&apos;s a list of courses I&apos;ve taken or plan to take during my time at UC Berkeley. I&apos;ve included a brief description of each course, as well as links to the course website, course description, and additional details where available.
                 </div>
                 {semesters.map((semester, index) => (
                     <div key={index} className="mb-8 flex lg:flex-row flex-col justify-start">
