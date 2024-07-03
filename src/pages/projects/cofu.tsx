@@ -20,7 +20,7 @@ export default function Mastermind() {
             <div className="flex flex-row mt-16">
                 <div className="my-auto" style={{ height: "400px", marginRight: "16px" }}>
                     <Image
-                        src="/cofu_logo.png"
+                        src="cofu_logo.png"
                         width={400}
                         height={400}
                         alt="Cofu UI, available on iOS and Android."
@@ -30,7 +30,7 @@ export default function Mastermind() {
                 </div>
 
                 <Image
-                    src="/cofu_ios_android.png"
+                    src="cofu_ios_android.png"
                     width={800}
                     height={200}
                     alt="Cofu UI, available on iOS and Android."
