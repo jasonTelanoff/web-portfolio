@@ -63,7 +63,7 @@ export default function Connect() {
                             </div>
                         </div>
                         <a
-                            href="Resume 8-1-24.pdf"
+                            href="Resume 8-17-24.pdf"
                             download="Jason_Telanoff.pdf"
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8 inline-block"
                         >
