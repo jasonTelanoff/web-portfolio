@@ -13,7 +13,16 @@ interface Course {
 const Coursework = () => {
     const semesters = [
         {
-            semester: 'Fall 2024 (Intended)',
+            semester: 'Spring 2025 (Intended)',
+            courses: [
+                {
+                    title: 'Designing, Visualizing and Understanding Deep Neural Networks',
+                    description: 'Deep Networks have revolutionized computer vision, language technology, robotics and control. They have growing impact in many other areas of science and engineering. They do not however, follow a closed or compact set of theoretical principles.',
+                    catalogLink: '',
+                },
+            ],
+        },{
+            semester: 'Fall 2024',
             courses: [
                 {
                     title: 'Introduction to Machine Learning',
@@ -29,6 +38,11 @@ const Coursework = () => {
                     title: 'Introduction to Software Engineering',
                     description: 'Ideas and techniques for designing, developing, and modifying large software systems. Service-oriented architecture, behavior-driven design with user stories, cloud computing, test-driven development, automated testing, and much more.',
                     catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-169a-001-lec-001',
+                },
+                {
+                    title: 'Introduction to General Astronomy',
+                    description: 'A description of modern astronomy with emphasis on the structure and evolution of stars, galaxies, and the Universe. Additional topics optionally discussed include quasars, pulsars, black holes, and extraterrestrial communication, etc. Individual instructor\'s synopses available from the department.', 
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-astron-c10-001-lec-001',
                 },
             ],
         },
