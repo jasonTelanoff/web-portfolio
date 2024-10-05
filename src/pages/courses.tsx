@@ -35,9 +35,9 @@ const Coursework = () => {
                     catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-186-001-lec-001',
                 },
                 {
-                    title: 'Introduction to Software Engineering',
-                    description: 'Ideas and techniques for designing, developing, and modifying large software systems. Service-oriented architecture, behavior-driven design with user stories, cloud computing, test-driven development, automated testing, and much more.',
-                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-169a-001-lec-001',
+                    title: 'Intro to Computer Vision and Computational Photography',
+                    description: 'This advanced undergraduate course introduces students to computing with visual data (images and video). We will cover acquisition, representation, and manipulation of visual information from digital photographs, image analysis and visual understanding, and image synthesis',
+                    catalogLink: 'https://classes.berkeley.edu/content/2024-fall-compsci-180-001-lec-001',
                 },
                 {
                     title: 'Introduction to General Astronomy',
