@@ -29,6 +29,69 @@ export const projects = [
         languageColor: '#C4AF13',
     },
     {
+        title: 'Stable Diffusion',
+        description: 'A two part project that creats images using a diffusion model, and then creates a model using the MNIST dataset. The model is then used to generate specific digits from completely random noise.',
+        language: 'Python',
+        languageColor: '#3673A5',
+        demoLink: 'https://jasontelanoff.github.io/cs180/proj5/index.html',
+    },
+    {
+        title: 'Auto Stitching Photo Mosaics',
+        description: 'This project uses Harris Corners to find features in images and RANSAC to match features between images. It then uses homography to stitch the images together and create a photo mosaic.',
+        language: 'Python',
+        languageColor: '#3673A5',
+        demoLink: 'https://jasontelanoff.github.io/cs180/proj4/index.html',
+    },
+    {
+        title: 'Face Morphing',
+        description: 'This project uses Delaunay triangulation to morph between two images. It uses affine transformations to warp the images and linear interpolation to blend between the two images.',
+        language:'Python',
+        languageColor: '#3673A5',
+        demoLink: 'https://jasontelanoff.github.io/cs180/proj3/index.html',
+    },
+    {
+        title: 'Fun with Filters and Frequencies',
+        description: 'This project uses convolution to get the difference frequencies of an image, allowing us to do things like sharpening, blurring, and edge detection. It also allows us to create hybrid images and multiresolution blending using Gaussian and Laplacian stacks.',
+        language: 'Python',
+        languageColor: '#3673A5',
+        demoLink: 'https://jasontelanoff.github.io/cs180/proj2/index.html'
+    },
+    {
+        title: 'Image Colorizing',
+        description: 'A script that aligns three images of the same scene taken with different color filters to create a color image. It uses linear transformations to align the images, a Canny edge detector for preprocessing, and SSIM as the metric to find the color image.',
+        language: 'Python',
+        languageColor: '#3673A5',
+        demoLink: 'https://jasontelanoff.github.io/cs180/proj1/index.html'
+    },
+    {
+        title: 'Cloth Simulation',
+        description: 'A cloth simulation that uses mass-spring systems to simulate cloth physics. It uses Verlet integration to simulate the physics of the cloth and supports collision detection and texture/shade mapping.',
+        language: 'C++',
+        languageColor: '#F34B7D',
+        demoLink: 'https://cal-cs184-student.github.io/hw-webpages-sp24-jasonTelanoff/hw4/index.html'
+    },
+    {
+        title: 'Ray Tracing',
+        description: 'A ray tracer that uses the Möller–Trumbore intersection algorithm to render 3D scenes. It uses a bounding volume hierarchy, importance sampling, Russian Roulette rendering, and adaptive sampling to optimize rendering time.',
+        language: 'C++',
+        languageColor: '#F34B7D',
+        demoLink: 'https://cal-cs184-student.github.io/hw-webpages-sp24-jasonTelanoff/hw3/index.html'
+    },
+    {
+        title: 'Mesh Renderer',
+        description: 'A mesh renderer builds off of the triangle rasterizer to render 3D models. It uses De Casteljau\'s algorithm is a method to evaluate Bézier curves and surfaces for smoothing.',
+        language: 'C++',
+        languageColor: '#F34B7D',
+        demoLink: 'https://cal-cs184-student.github.io/hw-webpages-sp24-jasonTelanoff/hw2/index.html'
+    },
+    {
+        title: 'Triangle Rasterizer',
+        description: 'A triangle rasterizer that uses barycentric coordinates to fill in triangles with color. It supports perspective correct texture mapping and anti-aliasing.',
+        language: 'C++',
+        languageColor: '#F34B7D',
+        demoLink: 'https://cal-cs184-student.github.io/hw-webpages-sp24-jasonTelanoff/hw1/index.html'
+    },
+    {
         title: 'Co-Fu',
         description: 'A mobile app built to connect home cooks with their community. (Vertical winner of the 2021 HackSC Hackathon)',
         demoLink: '/projects/cofu',
