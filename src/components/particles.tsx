@@ -188,36 +188,75 @@ export default function Particles({
         animate();
     }
 
+    // Spatial partitioning for efficient neighbor detection
+    const gridSize = 50; // Grid cell size
+    const grid: { [key: string]: Circle[] } = {};
+
+    const getGridKey = (x: number, y: number): string => {
+        const gridX = Math.floor(x / gridSize);
+        const gridY = Math.floor(y / gridSize);
+        return `${gridX},${gridY}`;
+    };
+
+    const getNeighbors = (circle: Circle): Circle[] => {
+        const neighbors: Circle[] = [];
+        const gridX = Math.floor(circle.x / gridSize);
+        const gridY = Math.floor(circle.y / gridSize);
+
+        // Check 9 neighboring grid cells (3x3)
+        for (let dx = -1; dx <= 1; dx++) {
+            for (let dy = -1; dy <= 1; dy++) {
+                const key = `${gridX + dx},${gridY + dy}`;
+                if (grid[key]) {
+                    grid[key].forEach(otherCircle => {
+                        if (otherCircle !== circle) {
+                            const distance = Math.hypot(circle.x - otherCircle.x, circle.y - otherCircle.y);
+                            if (distance < neighbourhoodSize) {
+                                neighbors.push(otherCircle);
+                            }
+                        }
+                    });
+                }
+            }
+        }
+        return neighbors;
+    };
+
     const animate = () => {
         clearContext();
 
+        // Clear and rebuild spatial grid
+        Object.keys(grid).forEach(key => delete grid[key]);
+        circles.current.forEach(circle => {
+            const key = getGridKey(circle.x, circle.y);
+            if (!grid[key]) grid[key] = [];
+            grid[key].push(circle);
+        });
+
         var v1: Vector, v2: Vector, v3: Vector;
         circles.current.forEach((circle: Circle, i: number) => {
-            const circleXBefore = circle.x;
-            const circleYBefore = circle.y;
+            const neighbouringBoids = getNeighbors(circle);
 
-            // Create a list of the circles within the neighbourhood
-            let neighbouringBoids: any[] = [];
-            circles.current.forEach((otherCircle: Circle, j: number) => {
-                if (i !== j && Math.abs(circle.x - otherCircle.x) < neighbourhoodSize) {
-                    neighbouringBoids.push(otherCircle);
-                }
-            });
-
-            if (neighbouringBoids.length != 0) {
+            if (neighbouringBoids.length > 0) {
                 if (Math.hypot(circle.x - mouse.current.x, circle.y - mouse.current.y) < mouseInfluence) {
-                    // TODO: Decide on attract or repel
-                    circle.dx += (circle.x - mouse.current.x) / 100;
-                    circle.dy += (circle.y - mouse.current.y) / 100;
+                    // Mouse repulsion - stronger force
+                    const mouseDistance = Math.hypot(circle.x - mouse.current.x, circle.y - mouse.current.y);
+                    const repulsionForce = Math.max(0, mouseInfluence - mouseDistance) / mouseInfluence;
+                    circle.dx += (circle.x - mouse.current.x) * repulsionForce * 0.02;
+                    circle.dy += (circle.y - mouse.current.y) * repulsionForce * 0.02;
                 } else {
                     v1 = rule1(circle, neighbouringBoids);
                     v2 = rule2(circle, neighbouringBoids);
                     v3 = rule3(circle, neighbouringBoids);
 
-                    // Update the circle's velocity
-                    circle.dx += (v1.x + v2.x + v3.x) / 200;
-                    circle.dy += (v1.y + v2.y + v3.y) / 200;
+                    // Apply forces with better balance to prevent blobbing
+                    circle.dx += (v1.x + v2.x + v3.x) * 0.015; // Reduced force multiplier
+                    circle.dy += (v1.y + v2.y + v3.y) * 0.015;
                 }
+
+                // Add some randomness to prevent perfect alignment
+                circle.dx += (Math.random() - 0.5) * 0.06;
+                circle.dy += (Math.random() - 0.5) * 0.06;
 
                 // Limit the circle's velocity
                 const currentSpeed = Math.hypot(circle.dx, circle.dy);
@@ -257,17 +296,15 @@ export default function Particles({
             v1.y += otherCircle.y;
         });
 
-        // v1.x += mouse.current.x * mouseInfluence;
-        // v1.y += mouse.current.y * mouseInfluence;
-
         v1.x /= (neighbouringCircles.length);
         v1.y /= (neighbouringCircles.length);
 
         v1.x -= circle.x;
         v1.y -= circle.y;
 
-        v1.x /= 100;
-        v1.y /= 100;
+        // Reduced cohesion force to prevent blobbing
+        v1.x /= 200;
+        v1.y /= 200;
 
         return v1;
     }
@@ -276,9 +313,12 @@ export default function Particles({
         // Rule 2: Boids try to keep a small distance away from other objects (including other boids).
         var v2: Vector = new Vector(0, 0);
         neighbouringCircles.forEach((otherCircle: Circle, j: number) => {
-            if (Math.hypot(otherCircle.x - circle.x, otherCircle.y - circle.y) < tooClose) {
-                v2.x -= otherCircle.x - circle.x;
-                v2.y -= otherCircle.y - circle.y;
+            const distance = Math.hypot(otherCircle.x - circle.x, otherCircle.y - circle.y);
+            if (distance < tooClose && distance > 0) {
+                // Stronger separation force with distance-based scaling
+                const separationForce = (tooClose - distance) / tooClose;
+                v2.x -= (otherCircle.x - circle.x) * separationForce * 0.5;
+                v2.y -= (otherCircle.y - circle.y) * separationForce * 0.5;
             }
         });
 
@@ -296,8 +336,10 @@ export default function Particles({
         v3.y /= neighbouringCircles.length;
         v3.x -= circle.dx;
         v3.y -= circle.dy;
-        v3.x /= 2;
-        v3.y /= 2;
+
+        // Reduced alignment force to prevent perfect synchronization
+        v3.x /= 4;
+        v3.y /= 4;
 
         return v3;
     }

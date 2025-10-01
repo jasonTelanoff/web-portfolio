@@ -16,6 +16,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
     "plugins": [
       {
         "name": "next"
@@ -31,10 +32,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/connect/_app.tsx",
-    "src/pages/projects/tree_fractal_generator.js",
-    "src/pages/_app.js"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

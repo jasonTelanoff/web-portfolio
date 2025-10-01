@@ -16,18 +16,18 @@ export const projects = [
         language: 'Dart (Flutter), Express.js',
         languageColor: '#2CB7F6',
     },
-    {
-        title: 'Chess AI',
-        description: '(In progress) A chess AI that uses minimax, alpha-beta pruning, and monte carlo tree search to play chess against a human player. It features several different techniques to evaluate the board state and make decisions.',
-        language: 'Javascript',
-        languageColor: '#C4AF13',
-    },
-    {
-        title: 'Connect 4 AI',
-        description: '(In progress) A connect 4 neural network that uses reinforcement learning to play connect 4 against a human player. The neural network is trained on user input, allowing the user to experience the improvement.',
-        language: 'Javascript',
-        languageColor: '#C4AF13',
-    },
+    // {
+    //     title: 'Chess AI',
+    //     description: '(In progress) A chess AI that uses minimax, alpha-beta pruning, and monte carlo tree search to play chess against a human player. It features several different techniques to evaluate the board state and make decisions.',
+    //     language: 'Javascript',
+    //     languageColor: '#C4AF13',
+    // },
+    // {
+    //     title: 'Connect 4 AI',
+    //     description: '(In progress) A connect 4 neural network that uses reinforcement learning to play connect 4 against a human player. The neural network is trained on user input, allowing the user to experience the improvement.',
+    //     language: 'Javascript',
+    //     languageColor: '#C4AF13',
+    // },
     {
         title: 'Stable Diffusion',
         description: 'A two part project that creats images using a diffusion model, and then creates a model using the MNIST dataset. The model is then used to generate specific digits from completely random noise.',
@@ -45,7 +45,7 @@ export const projects = [
     {
         title: 'Face Morphing',
         description: 'This project uses Delaunay triangulation to morph between two images. It uses affine transformations to warp the images and linear interpolation to blend between the two images.',
-        language:'Python',
+        language: 'Python',
         languageColor: '#3673A5',
         demoLink: 'https://jasontelanoff.github.io/cs180/proj3/index.html',
     },
